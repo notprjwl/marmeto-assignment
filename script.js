@@ -36,9 +36,9 @@ function displayData(categories) {
 function updateClothesGrid(clothes) {
   const clothesGrid = document.querySelector(".clothes-grid");
   clothesGrid.innerHTML = "";
-  clothes.forEach((cloth) => {
-    const clothElement = document.createElement("div");
-    clothElement.classList.add("single-div");
+  clothes.forEach((data) => {
+    const dataElement = document.createElement("div");
+    dataElement.classList.add("single-div");
 
     // badge-container
     const badgeContainer = document.createElement("div");
@@ -46,39 +46,39 @@ function updateClothesGrid(clothes) {
 
     const badgeText = document.createElement("h1");
     badgeText.classList.add("badge-text");
-    badgeText.textContent = cloth.badge_text;
+    badgeText.textContent = data.badge_text;
 
-    if (!cloth.badge_text) {
+    if (!data.badge_text) {
       badgeContainer.classList.add("hidden");
     }
 
     //image
     const imgElement = document.createElement("img");
-    imgElement.src = cloth.image;
-    imgElement.alt = cloth.title;
+    imgElement.src = data.image;
+    imgElement.alt = data.title;
 
     //vendor
     const vendor = document.createElement("h1");
     vendor.classList.add("vendor-name");
-    vendor.textContent = cloth.vendor;
+    vendor.textContent = data.vendor;
 
     //title
     const title = document.createElement("h1");
     title.classList.add("title-name");
-    title.textContent = cloth.title;
+    title.textContent = data.title;
 
     //price-div
     const priceDiv = document.createElement("div");
     priceDiv.classList.add("price-div");
 
     const price = document.createElement("h1");
-    price.textContent = `Rs. ${cloth.price}`;
+    price.textContent = `Rs. ${data.price}`;
 
     const comparePrice = document.createElement("h1");
-    comparePrice.textContent = `Rs. ${cloth.compare_at_price}`;
+    comparePrice.textContent = `Rs. ${data.compare_at_price}`;
 
     //discount
-    const discountPercentage = Math.round(calculateDiscountPercentage(cloth.compare_at_price, cloth.price));
+    const discountPercentage = Math.round(calculateDiscountPercentage(data.compare_at_price, data.price));
 
     const discountText = document.createElement("p");
     discountText.textContent = `${discountPercentage}% Off`;
@@ -88,19 +88,19 @@ function updateClothesGrid(clothes) {
     addButton.textContent = "Add to Cart";
 
     badgeContainer.appendChild(badgeText);
-    
-    clothElement.appendChild(imgElement);
-    clothElement.appendChild(badgeContainer);
-    clothElement.appendChild(vendor);
-    clothElement.appendChild(title);
+
+    dataElement.appendChild(imgElement);
+    dataElement.appendChild(badgeContainer);
+    dataElement.appendChild(vendor);
+    dataElement.appendChild(title);
 
     priceDiv.appendChild(price);
     priceDiv.appendChild(comparePrice);
     priceDiv.appendChild(discountText);
 
-    clothElement.appendChild(priceDiv);
-    clothElement.appendChild(addButton);
-    clothesGrid.appendChild(clothElement);
+    dataElement.appendChild(priceDiv);
+    dataElement.appendChild(addButton);
+    clothesGrid.appendChild(dataElement);
   });
 }
 
