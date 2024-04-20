@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  font-family: Inter;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.container {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+
+.heading-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  font-size: x-large;
+}
+
+.heading {
+  font-weight: bold;
+}
+
+.category-list {
+  background-color: #f2f2f2;
+  padding: 1rem;
+  width: 20rem;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.category-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  font-weight: bolder;
+  border-radius: 5px;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.category-list:hover {
+  color: white;
+  background-color: black;
+}
+
+.clothes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.single-div {
+  position: relative;
+  opacity: 0px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.single-div img {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 5px;
+}
+
+.single-div h1,
+p {
+  font-size: 1rem;
+  padding: 2px;
+  overflow: hidden; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.vendor-name {
+  font-weight: bold;
+}
+
+.title-name {
+  font-weight: 400;
+}
+
+.price-div {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.price-div h1:nth-child(2) {
+  text-decoration: line-through;
+  color: gray;
+  font-weight: 300;
+}
+
+.price-div h1,
+p {
+  font-size: 1rem;
+}
+
+.price-div p {
+  color: #e72300;
+  font-weight: 500;
+}
+
+.single-div button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 5px 0;
+  border-radius: 3px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+.active {
+  background-color: black;
+  color: white;
+}
+
+.single-div button:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.795);
+  cursor: pointer;
+}
+
+
+.badge-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e72300;
+  color: white;
+  padding: 5px 10px;
+  border-top-left-radius: 5px;
+  font-size: 14px; 
+  font-weight: bold;
+}
+
+.badge-text {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .category-div {
+    width: 90%;
+  }
+  .heading-div{
+    font-size: medium;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .category-div {
+    width: 90%;
+  }
+  .heading-div{
+    font-size: large;
+  }
+}
